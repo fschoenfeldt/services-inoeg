@@ -35,14 +35,14 @@ jobs:
           make
       - name: Upload binaries (Linux)
         if: ${{ matrix.arch == 'linux_amd64' }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: kiebitz-${{matrix.arch}}
           path: |
             /tmp/go/bin/*
       - name: Upload binaries (all other)
         if: ${{ matrix.arch != 'linux_amd64' }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: kiebitz-${{matrix.arch}}
           path: |
